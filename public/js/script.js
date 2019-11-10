@@ -156,7 +156,7 @@ function valueCapture(e){
     //print dropdown list
     deleteDropdown();
     for(i = 0; i < dropdownList.length; i++){
-      document.getElementById('dropdown-list').innerHTML += `<li class="dropdown-item">${dropdownList[i]}</li>`;
+      document.getElementById('dropdown-list').innerHTML += `<li class="dropdown-item-map">${dropdownList[i]}</li>`;
     }
     //select from dropdown list and fill in input field with selection
 		document.getElementById('dropdown-list').onclick = selectCity;
