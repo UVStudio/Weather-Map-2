@@ -1,0 +1,30 @@
+<!-- <p class="lead mb-3">Welcome to Trotter Map <%= name%></p> -->
+<link rel="stylesheet" href="css/map.css">
+<a href="/users/logout" class="btn btn-secondary" id="logout">Logout</a>
+
+<div id='search-box'>
+  <form id='search-field'>
+    <input type='text' name='city-input' id='city-input' placeholder="enter city name">
+    <div id="dropdown-box">
+      <ul id="dropdown-list"></ul>
+    </div>
+  </form>
+</div>
+<div id='current-forecast-box'>
+  <ul id='current-forecast'>
+    <li id='current'><a>current</a></li>
+    <p>&nbsp;/&nbsp;</p>
+    <li id='forecast' class='inactive'><a>forecast</a></li>
+  </ul>
+  <ul id='forecast-options'>
+    <li class='hours inactive hidden'><a>3 hours</a></li>
+    <li class='hours inactive hidden'><a>6 hours</a></li>
+    <li class='hours inactive hidden'><a>12 hours</a></li>
+    <li class='hours inactive hidden'><a>24 hours</a></li>
+  </ul>
+</div>
+<div id="time"><p id="time-text"></p></div>
+<div id="map"></div>
+<script src="js/script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLqdEEMAjg-zFELYfS9s_yUY6F8FebgTE&callback=initMap"
+async defer></script>

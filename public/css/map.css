@@ -1,0 +1,272 @@
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .95;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: .95;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 100%;
+  }
+
+}
+
+p, li, h1, h2, h3, h4, h5 {
+  font-family: 'Quicksand';
+}
+
+a:hover {
+  color: rgb(151, 73, 10);
+  cursor: default;
+}
+
+h4 {
+  margin: 0px;
+  padding: 0px;
+  font-size: 1.5em;
+  font-style: bold;
+}
+
+li {
+  padding: 2px 0px;
+  cursor: pointer;
+}
+
+#dropdown-list {
+  max-height: 400px;
+  overflow-y: scroll;
+  opacity: .9;
+  z-index: 1;
+  margin-bottom: 0;
+}
+
+#map {
+  height: 100%;
+  z-index: 0;
+  position: relative;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  line-height: 1;
+}
+
+#search-box {
+  left: 13em;
+  top: 0.5em;
+  background-color: #2B3E50;
+  position: fixed;
+  z-index: 1;
+  border-radius: 10px;
+  opacity: .9;
+  border: 1px #154167 solid;
+}
+
+#logout {
+  position: fixed;
+  z-index: 1;
+  left: 1em;
+  top: 4em;
+}
+
+#search-field {
+  padding: .5em .5em;
+}
+
+#city-input {
+  width: 20em;
+  height: 2em;
+  font-size: 0.8em;
+  border-radius: 5px;
+}
+
+input[type=text]{
+  padding: 0px 5px;
+}
+
+#weather-search {
+  padding: 0.4em;
+  margin-left: 1em;
+}
+
+#time {
+  position: absolute;
+  left: 48em;
+  top: 1.05em;
+  z-index: 1;
+}
+
+#time-text {
+  color: rgb(20, 13, 7);
+  text-shadow: 1px 1px white;
+  font-size: 1.2em;
+  font-family: 'Quicksand';
+}
+
+#dynamic {
+  height: 100%;
+  width: 100%
+}
+
+.container {
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-item-map {
+  font-family: 'Quicksand', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+.weather-image {
+  width: 80px;
+  height: 80px;
+}
+
+.popup-bubble {
+  /* Position the bubble centred-above its parent. */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -100%);
+  /* Style the bubble. */
+  background-color: rgb(104, 147, 204);
+  padding: 5px;
+  border-radius: 10px;
+  font-family: sans-serif;
+  color: white;
+  overflow-y: auto;
+  min-height: 150px;
+  min-width: 120px;
+  box-shadow: 0px 2px 10px 1px rgba(0,0,0,0.5);
+  opacity: .95;
+}
+
+.popup-bubble-anchor {
+  /* Position the div a fixed distance above the tip. */
+  position: absolute;
+  width: 100%;
+  bottom: /* TIP_HEIGHT= */ 12px;
+  left: 0;
+}
+
+/* This element draws the tip. */
+.popup-bubble-anchor::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Center the tip horizontally. */
+  transform: translate(-50%, 0);
+  /* The tip is a https://css-tricks.com/snippets/css/css-triangle/ */
+  width: 0;
+  height: 0;
+  /* The tip is 8px high, and 12px wide. */
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: /* TIP_HEIGHT= */ 12px solid rgb(122, 167, 226);
+}
+
+.popup-container {
+  cursor: auto;
+  height: 0;
+  position: absolute;
+  /* The max width of the info window. */
+  width: 200px;
+  animation-name: fadein;
+  animation-duration: .5s;
+}
+
+.popup-bubble p {
+  font-size: 1.1em;
+}
+
+.popup-bubble h4 {
+  display: inline;
+}
+
+.btn-close {
+  display: inline;
+  position: relative;
+  color: white;
+  background: none;
+  border: 1px solid rgb(104, 147, 204);
+  margin: 0px 2px 0px 10px;
+  border-radius: 50%;
+  top: -3px;
+  left: 2px;
+}
+
+.btn-text {
+  margin: -2px 4px 0px 4px;
+  font-size: 1.4em !important;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#current-forecast-box {
+  position: absolute;
+  left: 26em;
+  top: 0.7em;
+  z-index: 1;
+  color: rgb(20, 13, 7);
+  text-shadow: 1px 1px white;
+  font-size: 1.3em;
+}
+
+#current-forecast-box button {
+  background: none;
+  border: none;
+}
+
+#current-forecast {
+  position: relative;
+  z-index: 1;
+}
+
+#current-forecast li, #current-forecast p {
+  float: left;
+}
+
+#forecast-options li {
+  text-align: right;
+}
+
+.inactive {
+  opacity: .5;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+
