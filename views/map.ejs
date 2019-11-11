@@ -1,5 +1,8 @@
 <!-- <p class="lead mb-3">Welcome to Trotter Map <%= name%></p> -->
 <link rel="stylesheet" href="css/map.css">
+<div class="loader">
+  <img src="/img/loader2.gif" alt="loading...">
+</div>
 <a href="/users/logout" class="btn btn-secondary" id="logout">Logout</a>
 
 <div id='search-box'>
@@ -26,5 +29,6 @@
 <div id="time"><p id="time-text"></p></div>
 <div id="map"></div>
 <script src="js/script.js"></script>
+<script src="js/preload.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLqdEEMAjg-zFELYfS9s_yUY6F8FebgTE&callback=initMap"
 async defer></script>
