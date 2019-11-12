@@ -1,4 +1,5 @@
 window.addEventListener('load', () => {
   const loader = document.querySelector('.loader')
-  loader.className += ' hidden'
+  setTimeout(() => {
+    loader.className += ' hiddenLoader' }, 3000);
 })

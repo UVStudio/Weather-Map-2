@@ -26,14 +26,6 @@
   }
 }
 
-@keyframes fadeoutLoader {
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-}
-
 @media (min-width: 576px) {
   .container {
     max-width: 100%;
@@ -215,23 +207,25 @@ input[type=text]{
 }
 
 .popup-bubble h4 {
+  font-size: 1.3em;
   display: inline;
 }
 
 .btn-close {
   display: inline;
   position: relative;
+  float: right;
   color: white;
   background: none;
   border: 1px solid rgb(104, 147, 204);
   margin: 0px 2px 0px 10px;
   border-radius: 50%;
-  top: -3px;
-  left: 2px;
+  top: -4px;
+  left: 6px;
 }
 
 .btn-text {
-  margin: -2px 4px 0px 4px;
+  margin: -2px 2px 0px 4px;
   font-size: 1.4em !important;
 }
 
@@ -239,6 +233,13 @@ input[type=text]{
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+@keyframes fadeoutLoader {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .loader {
@@ -258,8 +259,8 @@ input[type=text]{
   width: 80px;
 }
 
-.loader.hidden {
-  animation: fadeoutLoader 2s;
+.loader.hiddenLoader {
+  animation: fadeoutLoader 1s;
   animation-fill-mode: forwards;
   animation-timing-function: ease;
 }
