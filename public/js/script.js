@@ -1,13 +1,14 @@
-//turn on server 'live-server'
+
+
+
 //22635 cities in current.city.list.json
-//
 
 //function to print current local time every second
-setInterval(() => {
-  const today = new Date();
-  const time = today.getHours(2) + ":" + today.getMinutes(2) + ":" + today.getSeconds(2) + "  your local time";
-  document.getElementById('time-text').textContent = time;
-}, 1000)
+// setInterval(() => {
+//   const today = new Date();
+//   const time = today.getHours(2) + ":" + today.getMinutes(2) + ":" + today.getSeconds(2) + "  your local time";
+//   document.getElementById('time-text').textContent = time;
+// }, 1000)
 
 
 /** Initializes the map and the custom popup. */
@@ -43,7 +44,6 @@ xhttp.onreadystatechange = function(){
 };
 xhttp.open('GET', 'current.city.list.min.json', true);
 xhttp.send();
-
 
 
 //function to print selected dropdown list city onto input field
@@ -86,7 +86,6 @@ function deleteDropdown(){
 };
 
 
-
 //functions to choose between current and forecast
 const current = document.getElementById('current');
 const forecast = document.getElementById('forecast');
@@ -103,8 +102,6 @@ function runCurrent(){
   });
   deletePopups()
 }
-
-
 
 function runForecast(){
   forecast.classList.toggle('inactive');

@@ -15,7 +15,6 @@ router.get('/dashboard', ensureAuthenticated, (req, res) =>
 router.get('/map', ensureAuthenticated, (req, res) => 
     res.render('map', {
         name: req.user.name
-
     })
 )
 

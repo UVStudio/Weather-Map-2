@@ -3,8 +3,33 @@
 <div class="loader">
   <img src="/img/loader2.gif" alt="loading...">
 </div>
-<a href="/users/logout" class="btn btn-secondary" id="logout">Logout</a>
 
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Trotter Map</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <p class="hello-name">Hello, <%= name%></p>
+      <li class="nav-item active">
+        <a href="/users/logout" class="btn btn-secondary" id="logout">Logout</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" name='city-input' id='city-input' placeholder="enter city name">
+      <div id="dropdown-box">
+        <ul id="dropdown-list"></ul>
+      </div>
+    </form>
+
+  </div>
+</nav>
+
+
+<!--
 <div id='search-box'>
   <form id='search-field'>
     <input type='text' name='city-input' id='city-input' placeholder="enter city name">
@@ -13,6 +38,7 @@
     </div>
   </form>
 </div>
+-->
 <div id='current-forecast-box'>
   <ul id='current-forecast'>
     <li id='current'><a>current</a></li>
